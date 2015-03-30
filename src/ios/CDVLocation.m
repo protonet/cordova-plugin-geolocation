@@ -157,6 +157,10 @@
         self.locationManager.distanceFilter = 10;
         self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
     }
+
+    if ([self.locationManager respondsToSelector:@selector(setPausesLocationUpdatesAutomatically:)]) {
+        [self.locationManager setPausesLocationUpdatesAutomatically:NO];
+    }
 }
 
 - (void)_stopLocation
